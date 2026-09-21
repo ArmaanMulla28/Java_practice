@@ -7,12 +7,15 @@ public class CustomStack{
         this.size = size;
         this.stack = new String[size];
     }
+    // Method to check if the stack is empty
     public static boolean isEmpty(CustomStack stack){
         return stack.ptr == -1;
     }
+    // Method to check if the stack is full
     public static boolean isFull(CustomStack stack){
         return stack.ptr == stack.size - 1;
     }
+    // Method to push an element onto the stack
     String push(String value){
         if (isFull(this)) {
             System.out.println("Stack is full");
@@ -25,6 +28,7 @@ public class CustomStack{
             return value;
         }
     }
+    // Method to pop an element from the stack
     String pop(){
         if(isEmpty(this)){
             System.out.println("Stack is empty");
@@ -37,6 +41,7 @@ public class CustomStack{
             return value;
         }
     }
+    // Method to peek at the top element of the stack
     String peek(){
         if (isEmpty(this)){
             System.out.println("Stack is empty");
@@ -47,6 +52,7 @@ public class CustomStack{
             return stack[ptr];
         }
     }
+    // Method to display the elements of the stack
     void display(){
         if (isEmpty(this)){
             System.out.println("No history available");
@@ -63,6 +69,7 @@ public class CustomStack{
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter the size of the stack: ");
         int size = sc.nextInt();
+        // Consume the newline character after reading the integer
         sc.nextLine();  
         CustomStack stack = new CustomStack(size);
         while (true){
