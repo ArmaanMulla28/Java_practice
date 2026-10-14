@@ -61,6 +61,22 @@ class Node{
         System.out.print(root.data + " ");
         inorder(root.right);
     }
+    boolean search(Node root, int data) {
+
+    if (root == null) {
+        return false;
+    }
+
+    if (data == root.data) {
+        return true;
+    }
+
+    if (data < root.data) {
+        return search(root.left, data);
+    }
+
+    return search(root.right, data);
+}
 }
 
     
